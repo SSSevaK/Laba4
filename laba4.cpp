@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 
-using namespace std;
 bool is_correct(int&);
 bool is_natural(int);
 int** Make(int, int);
@@ -81,12 +80,12 @@ int main()
 
 bool Fill_mas(int** mas, int row, int col)
 {
-    cout << "Input elements of the array:\n";
+    std::cout << "Input elements of the array:\n";
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
         {
-            cout << "Element [" << i << "][" << j << "]: ";
+            std::cout << "Element [" << i << "][" << j << "]: ";
             if (!is_correct(mas[i][j]))
             {
                 return false;
@@ -177,8 +176,8 @@ int Max_Elem(int** mas, int row, int col)
 }
 bool prov_row(int& row)
 {
-    cout << "Input the size of a two-dimensional array\n";
-    cout << "Number of rows: ";
+    std::cout << "Input the size of a two-dimensional array\n";
+    std::cout << "Number of rows: ";
     if (is_correct(row) && is_natural(row))
     {
         return 1;
@@ -187,7 +186,7 @@ bool prov_row(int& row)
 }
 bool prov_col(int& col)
 {
-    cout << "Number of columns: ";
+    std::cout << "Number of columns: ";
     if (is_correct(col) && is_natural(col))
     {
         return 1;
@@ -208,18 +207,18 @@ void print_transposed_Arr(int row, int col, int** arr)
 {
     for (int i = 0; i < col; i++) {
         for (int j = 0; j < row; j++) {
-            cout << arr[i][j] << " ";
+            std::cout << arr[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 void print_Arr(int row, int col, int** arr)
 {
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++) {
-            cout << arr[i][j] << " ";
+            std::cout << arr[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 int sum_main_diagonal(int** mas, int row, int col)
